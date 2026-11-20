@@ -60,6 +60,7 @@ See [docs/ROADMAP.md](docs/ROADMAP.md) for planned phases and postponed features
 ## Documentation
 
 - [Roadmap](docs/ROADMAP.md)
+- [MVP user stories](docs/USER_STORIES.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Architecture decisions](docs/DECISIONS.md)
 - [Deployment](docs/DEPLOYMENT.md)

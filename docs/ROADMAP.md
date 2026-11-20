@@ -43,6 +43,11 @@ Phases are ordered by dependency; durations are not fixed.
 
 ## Postponed (after MVP)
 
+- Email confirmation on registration
+- Multiple technicians per work order
+- Consolidated invoices (several work orders per invoice) for business customers
+- Tax rates per service or item
+- Technicians collecting payments on site
 - Branches per tenant
 - Full inventory management (warehouses, transfers, purchase orders)
 - Online payment gateway
