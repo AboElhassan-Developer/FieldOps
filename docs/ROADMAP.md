@@ -51,6 +51,7 @@ Phases are ordered by dependency; durations are not fixed.
 - Branches per tenant
 - Full inventory management (warehouses, transfers, purchase orders)
 - Online payment gateway
+- Refunds and credit notes
 - Customer self-service portal
 - Tenant subscription billing
 - Bilingual business data (e.g. service names in Arabic and English)
