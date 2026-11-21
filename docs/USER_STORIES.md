@@ -221,6 +221,7 @@ All stories implicitly require that users only ever see and change data belongin
 
 - Issuing assigns a sequential number per tenant (e.g. `INV-2026-0318`) with no gaps or duplicates.
 - Issued invoices cannot be edited — only voided with a reason.
+- An invoice with recorded payments cannot be voided (refunds are postponed).
 
 ### US-29 Record payments (M)
 **As a** Dispatcher, **I want** to record payments, **so that** I know what is still owed.
