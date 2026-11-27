@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FieldOps.SharedKernel\FieldOps.SharedKernel.csproj" />
+    <ProjectReference Include="..\FieldOps.Modules.Identity.Contracts\FieldOps.Modules.Identity.Contracts.csproj" />
+  </ItemGroup>
+</Project>
