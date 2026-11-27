@@ -1,0 +1,26 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/FieldOps.Api/FieldOps.Api.csproj" />
+    <Project Path="src/FieldOps.SharedKernel/FieldOps.SharedKernel.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/Billing/">
+    <Project Path="src/Modules/Billing/FieldOps.Modules.Billing.Contracts/FieldOps.Modules.Billing.Contracts.csproj" />
+    <Project Path="src/Modules/Billing/FieldOps.Modules.Billing/FieldOps.Modules.Billing.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Customers/">
+    <Project Path="src/Modules/Customers/FieldOps.Modules.Customers.Contracts/FieldOps.Modules.Customers.Contracts.csproj" />
+    <Project Path="src/Modules/Customers/FieldOps.Modules.Customers/FieldOps.Modules.Customers.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Identity/">
+    <Project Path="src/Modules/Identity/FieldOps.Modules.Identity.Contracts/FieldOps.Modules.Identity.Contracts.csproj" />
+    <Project Path="src/Modules/Identity/FieldOps.Modules.Identity/FieldOps.Modules.Identity.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/Operations/">
+    <Project Path="src/Modules/Operations/FieldOps.Modules.Operations.Contracts/FieldOps.Modules.Operations.Contracts.csproj" />
+    <Project Path="src/Modules/Operations/FieldOps.Modules.Operations/FieldOps.Modules.Operations.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/FieldOps.ArchitectureTests/FieldOps.ArchitectureTests.csproj" />
+  </Folder>
+</Solution>
