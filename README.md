@@ -1,5 +1,7 @@
 # FieldOps
 
+[![Backend CI](https://github.com/AboElhassan-Developer/FieldOps/actions/workflows/backend-ci.yml/badge.svg)](https://github.com/AboElhassan-Developer/FieldOps/actions/workflows/backend-ci.yml)
+
 **Multi-tenant field service management platform** for maintenance and service companies — built with ASP.NET Core and Angular.
 
 > 🚧 **Status:** In active development. The backend is being built first; the Angular frontend follows.
