@@ -40,6 +40,7 @@ All stories implicitly require that users only ever see and change data belongin
 - Admin can create a user with name, email, phone, role (Tenant Admin, Dispatcher, Technician) and a temporary password.
 - The user must change the temporary password on first sign-in.
 - Admin can change a user's role and deactivate / reactivate users.
+- Admin can reset a team member's password to a new temporary password (self-service reset by email is postponed).
 - Deactivated users cannot sign in; their history is kept.
 - An admin cannot deactivate themselves or remove the last active Tenant Admin.
 

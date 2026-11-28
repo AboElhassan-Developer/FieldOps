@@ -69,9 +69,39 @@ See [docs/ROADMAP.md](docs/ROADMAP.md) for planned phases and postponed features
 
 ## Getting started
 
-Setup instructions will be added once the backend solution is created.
+### Prerequisites
 
-**Prerequisites (planned):** .NET 10 SDK, SQL Server 2022+ (or Docker), Node.js LTS (for the frontend).
+- .NET 10 SDK
+- SQL Server 2022 or later (any edition, including Developer)
+- Docker (required by the integration tests)
+
+### Run the backend locally
+
+All commands run from the `backend/` folder.
+
+```bash
+# 1. Restore the local .NET tools (dotnet-ef)
+dotnet tool restore
+
+# 2. Store the database connection string outside the repository (user secrets)
+dotnet user-secrets set "ConnectionStrings:FieldOps" "Server=<your-server>;Database=FieldOps;Trusted_Connection=True;TrustServerCertificate=True" --project src/FieldOps.Api
+
+# 3. Create or update the database schema
+dotnet ef database update --project src/Modules/Identity/FieldOps.Modules.Identity --startup-project src/FieldOps.Api --context IdentityModuleDbContext
+
+# 4. Run the API
+dotnet run --project src/FieldOps.Api
+```
+
+Health endpoints: `/health/live` (process is running) and `/health/ready` (database reachable).
+
+### Run the tests
+
+```bash
+dotnet test --solution FieldOps.slnx
+```
+
+Integration tests start a disposable SQL Server container through Testcontainers; Docker must be running.
 
 ---
 
