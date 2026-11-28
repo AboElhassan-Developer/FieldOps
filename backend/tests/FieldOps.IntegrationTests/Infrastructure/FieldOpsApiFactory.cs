@@ -1,8 +1,10 @@
 using FieldOps.IntegrationTests.Infrastructure;
 using FieldOps.Modules.Identity;
+using FluentValidation;
 using FieldOps.Modules.Identity.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.AspNetCore.TestHost;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -53,5 +55,12 @@ public sealed class FieldOpsApiFactory : WebApplicationFactory<Program>, IAsyncL
             {
                 [$"ConnectionStrings:{IdentityModule.ConnectionStringName}"] = ConnectionString,
             }));
+
+        // Test-only controllers and validators (e.g. the API conventions probe).
+        builder.ConfigureTestServices(services =>
+        {
+            services.AddControllers().AddApplicationPart(typeof(FieldOpsApiFactory).Assembly);
+            services.AddValidatorsFromAssemblyContaining<FieldOpsApiFactory>();
+        });
     }
 }

@@ -1,21 +1,26 @@
+using FieldOps.Api.Http;
 using FieldOps.Modules.Identity;
 using FieldOps.SharedKernel;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton(TimeProvider.System);
 
-builder.Services.AddControllers();
+builder.Services.AddApiConventions();
 builder.Services.AddOpenApi();
 
 builder.Services.AddIdentityModule();
 
 var app = builder.Build();
 
+app.UseApiConventions();
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();

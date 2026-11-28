@@ -9,7 +9,7 @@ Phases are ordered by dependency; durations are not fixed.
 |---|---|
 | S1 | Requirements, domain model and ERD, solution structure, CI pipeline (build + test) |
 | S2 | Database and integration-test foundation; API conventions (versioning, ProblemDetails, validation); tenant registration, login, JWT + refresh tokens; tenant isolation and audit columns; team management |
-| S3 | Customers and sites; validation, error handling (ProblemDetails), logging, pagination, request localization; **first deployment** |
+| S3 | Customers and sites; logging, pagination, request localization; **first deployment** |
 
 ## Phase 2 — Core domain
 

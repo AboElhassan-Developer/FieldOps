@@ -160,7 +160,7 @@ All are free and open source.
 
 **Decision:** All endpoints are versioned in the URL (`/api/v1/...`).
 
-**Consequences:** Breaking changes can be introduced as a new version without affecting existing clients.
+**Consequences:** Breaking changes can be introduced as a new version without affecting existing clients. The prefix is defined once (`ApiRoutes.V1`); a versioning library will be added only when a second version is introduced, since the only client today is the web application released together with the API.
 
 ---
 
@@ -185,3 +185,17 @@ All are free and open source.
 **Decision:** Inside a module, relationships use regular foreign keys. Across modules, entities store only the referenced Id, with no navigation properties and no database foreign key; the referencing module validates the reference through the other module's public contract.
 
 **Consequences:** Clear module boundaries and independent schemas. Referential integrity across modules is enforced by application code; the risk is low because referenced business records are deactivated, never deleted.
+
+---
+
+## ADR-016: Results for expected errors, exceptions for unexpected ones
+
+**Status:** Accepted
+
+**Context:** Business operations fail for expected reasons (duplicate email, record not found, rule violated). Throwing exceptions for these hides failure paths from method signatures and makes normal control flow expensive and harder to follow.
+
+**Decision:** Operations that can fail for a business reason return a `Result` carrying an `Error` with a stable code, a message and a kind (validation, not found, conflict). Controllers map errors to ProblemDetails with the matching status code. Exceptions are reserved for unexpected failures and are returned as a generic `500` without internal details.
+
+**Alternatives considered:** Domain exceptions mapped by a global handler — less code at call sites, but failures are invisible in signatures. Third-party result libraries — not needed for a type this small.
+
+**Consequences:** Failure paths are explicit and testable; every error response has the same shape and a stable `code` that clients can rely on and translate.
