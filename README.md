@@ -95,6 +95,8 @@ dotnet run --project src/FieldOps.Api
 
 Health endpoints: `/health/live` (process is running) and `/health/ready` (database reachable).
 
+In the Development environment, interactive API documentation is available at `/scalar`.
+
 ### Run the tests
 
 ```bash
