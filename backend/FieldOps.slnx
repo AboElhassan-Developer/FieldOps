@@ -22,5 +22,6 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/FieldOps.ArchitectureTests/FieldOps.ArchitectureTests.csproj" />
+    <Project Path="tests/FieldOps.IntegrationTests/FieldOps.IntegrationTests.csproj" />
   </Folder>
 </Solution>
